@@ -108,10 +108,7 @@ export function FileViewer({ fileInfo, onDownload, isDownloading }: FileViewerPr
                 className="max-w-full h-auto rounded"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'
-                  const nextSibling = e.currentTarget.nextElementSibling as HTMLElement
-                  if (nextSibling) {
-                    nextSibling.style.display = 'block'
-                  }
+                  e.currentTarget.nextElementSibling!.style.display = 'block'
                 }}
               />
               <div className="hidden text-center text-gray-500 py-8">

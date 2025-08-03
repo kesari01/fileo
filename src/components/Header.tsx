@@ -1,4 +1,7 @@
 import Link from 'next/link'
+const PORTFOLIO_URL = process.env.PORTFOLIO_URL;
+const GITHUB_URL = process.env.GITHUB_URL;
+const LINKEDIN_URL = process.env.LINKEDIN_URL;
 
 export function Header() {
   return (
@@ -13,19 +16,29 @@ export function Header() {
           </Link>
           
           <nav className="flex items-center space-x-6">
-            <Link 
-              href="/" 
+            <a 
+              href={PORTFOLIO_URL}
+              target="_blank" 
+              rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              Upload
-            </Link>
+              Portfolio
+            </a>
             <a 
-              href="https://github.com" 
+              href={GITHUB_URL} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               GitHub
+            </a>
+            <a 
+              href={LINKEDIN_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              LinkedIn
             </a>
           </nav>
         </div>
